@@ -1,15 +1,11 @@
 body {
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    background-color: rgb(19, 19, 19);
+    margin: 0;
+    padding: 0;
 }
 
 /* NAVBAR AND LOGO */
-
-.hero-container {
-    width: 80%;
-    margin: 0 auto;
-}
 
 header {
     background: rgb(34, 34, 34);
@@ -46,14 +42,15 @@ nav li {
 }
 
 nav ul>li>a{
-    color: rgb(143, 44, 189);
+    color: #fff;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 16px;
 }
 
 nav ul>li>a:hover {
-    color: #fff;
+    transition: ease-in .2s;
+    color: rgb(143, 44, 189);
 }
 
 nav ul>li>a::before {
@@ -70,11 +67,11 @@ nav ul>li>a::before {
 }
 
 .user-icon{
-    color: rgb(143, 44, 189);
+    color: #fff;
 }
 
 .login-btn:hover .user-icon{
-    color: #fff;
+    color: rgb(143, 44, 189);
 }
 
 nav ul>li>a:hover::before {
@@ -84,7 +81,7 @@ nav ul>li>a:hover::before {
 .login-btn {
     padding: 10px 18px;
     background: rgb(34, 34, 34); /* or your header accent color */
-    color: rgb(143, 44, 189);
+    color: #fff;
     border-radius: 8px;
     text-decoration: none;
     transition: 0.2s ease;
@@ -99,12 +96,27 @@ nav ul>li>a:hover::before {
 
 /* HERO */
 
+.hero{
+    background-color: rgb(19, 19, 19);
+    height: 820px;
+}
+
+.hero-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.info-text{
+    color: rgb(222, 146, 5);
+    font-weight: 400;
+}
+
 .hero-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    min-height: 80vh;
+    min-height: 70vh;
 }
 
 .hero-text{
@@ -166,4 +178,38 @@ nav ul>li>a:hover::before {
     100%{
         left: 0;
     }
+}
+
+.hero::before,
+.hero::after {
+    content: '';
+    position: absolute;
+    height: 120px;
+    bottom: -5px;
+    right: 0;
+    left: 0;
+    background: #eeeeee;
+    transform: skewY(-3.2deg);
+}
+
+
+/* QUIZ OPTIONS */
+
+.quiz-options{
+    background-color: #eeeeee;
+    height: 500px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 20px;
+    background-color: hsl(271, 89%, 55%);
+    color: #eeeeee;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.5s;
 }
