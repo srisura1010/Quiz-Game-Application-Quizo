@@ -1,0 +1,81 @@
+body {
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 300;
+    background-color: rgb(19, 19, 19);
+}
+
+.container {
+    width: 80%;
+    margin: 0 atuo;
+}
+
+header {
+    background: rgb(34, 34, 34);
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.logo{
+    float: left;
+    padding: 5px;
+    padding-left: 115px;
+}
+
+nav {
+    float: right;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 65px;
+    padding-top: 35px;
+    
+    position: relative;
+}
+
+nav ul>li>a{
+    color: rgb(143, 44, 189);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+nav ul>li>a:hover {
+    color: #000;
+}
+
+nav ul>li>a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: rgb(143, 44, 189);
+
+    position: absolute;
+    top: 0;
+    width: 0%;
+    transition: all ease-in 200ms;
+}
+
+.user-icon{
+    color: rgb(143, 44, 189);
+}
+
+.login-btn{
+    color: rgb(143, 44, 189);
+}
+
+nav ul>li>a:hover::before {
+    width: 100%;
+}
