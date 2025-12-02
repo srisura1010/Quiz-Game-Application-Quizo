@@ -1,13 +1,14 @@
 body {
     box-sizing: border-box;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 300;
+    font-family: "Poppins", sans-serif;
     background-color: rgb(19, 19, 19);
 }
 
-.container {
+/* NAVBAR AND LOGO */
+
+.hero-container {
     width: 80%;
-    margin: 0 atuo;
+    margin: 0 auto;
 }
 
 header {
@@ -23,7 +24,6 @@ header::after {
 .logo{
     float: left;
     padding: 5px;
-    padding-left: 115px;
 }
 
 nav {
@@ -37,8 +37,9 @@ nav ul{
 }
 
 nav li {
+    font-weight: 500;
     display: inline-block;
-    margin-left: 65px;
+    margin-left: 70px;
     padding-top: 35px;
     
     position: relative;
@@ -52,7 +53,7 @@ nav ul>li>a{
 }
 
 nav ul>li>a:hover {
-    color: #000;
+    color: #fff;
 }
 
 nav ul>li>a::before {
@@ -72,10 +73,97 @@ nav ul>li>a::before {
     color: rgb(143, 44, 189);
 }
 
-.login-btn{
-    color: rgb(143, 44, 189);
+.login-btn:hover .user-icon{
+    color: #fff;
 }
 
 nav ul>li>a:hover::before {
     width: 100%;
+}
+
+.login-btn {
+    padding: 10px 18px;
+    background: rgb(34, 34, 34); /* or your header accent color */
+    color: rgb(143, 44, 189);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.2s ease;
+    margin-right: 10px;
+}
+
+.login-btn:hover {
+    background: rgb(55, 55, 55);
+}
+
+
+
+/* HERO */
+
+.hero-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 80vh;
+}
+
+.hero-text{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.hero-text .static-txt{
+    color: #bfbfbf;
+    font-weight: 600;
+    font-size: 55px;
+}
+
+.hero-text .dynamic-txts {
+
+    line-height: 90px;
+    height: 90px;
+    overflow: hidden;
+}
+
+
+.hero-text .dynamic-txts li{
+    list-style: none;
+    color: rgb(143, 44, 189);
+    font-size: 55px;
+    font-weight: 600;
+    top: 0;
+    position: relative;
+    animation: slide 15s steps(5) infinite;
+}
+
+@keyframes slide{
+    100%{
+        top: -450px; 
+    }
+}
+
+.dynamic-txts li{
+    position: relative;
+}
+
+.dynamic-txts li::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(19, 19, 19);
+    border-left: 2px solid rgb(143, 44, 189);
+    animation: typing 3s steps(9) infinite;
+}
+
+@keyframes typing {
+    40%,
+    60%{
+        left: calc(100% + 30px);
+    }
+    100%{
+        left: 0;
+    }
 }
